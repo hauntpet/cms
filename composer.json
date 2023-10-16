@@ -1,0 +1,62 @@
+{
+    "name": "haunt/cms",
+    "description": "The main package required for Haunt.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "crotanite",
+            "email": "crotanite@lumitestudios.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^10.0",
+        "kra8/laravel-snowflake": "^2.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.9",
+        "pestphp/pest": "^2.16",
+        "laravel/pint": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haunt\\CMS\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Haunt\\CMS\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Haunt\\CMS\\HauntServiceProvider"
+            ],
+            "aliases": {
+                "Haunt": "\\Haunt\\CMS\\Facades\\Haunt"
+            }
+        }
+    },
+    "scripts": {
+        "pint": [
+            "pint"
+        ],
+        "test": [
+            "@putenv XDEBUG_MODE=develop",
+            "pest --bail"
+        ],
+        "test-coverage": [
+            "@putenv XDEBUG_MODE=coverage",
+            "pest --coverage --coverage-clover=coverage.xml"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
