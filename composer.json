@@ -1,5 +1,5 @@
 {
-    "name": "haunt/cms",
+    "name": "hauntpet/cms",
     "description": "The main package required for Haunt.",
     "type": "library",
     "license": "MIT",
