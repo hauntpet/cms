@@ -12,3 +12,10 @@ test('can check if Haunt is installed', function () {
         ->and($this->class->isInstalled())
         ->toBeTrue();
 })->group('service', 'haunt');
+
+test('can get the plugins table name', function () {
+    expect(method_exists($this->class, 'pluginsTableName'))
+        ->toBeTrue()
+        ->and($this->class->pluginsTableName())
+        ->toBeString();
+})->group('service', 'haunt');
