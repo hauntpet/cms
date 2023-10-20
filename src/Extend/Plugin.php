@@ -43,13 +43,6 @@ abstract class Plugin
     abstract public function key(): string;
 
     /**
-     * Install the plugin.
-     *
-     * @return null|string
-     */
-    abstract public function install(): ?string;
-
-    /**
      * Run the plugin.
      *
      * @return bool
@@ -57,9 +50,16 @@ abstract class Plugin
     abstract public function run(): bool;
 
     /**
+     * Install the plugin.
+     *
+     * @return null|string
+     */
+    abstract public function install(): ?string;
+
+    /**
      * Uninstall the plugin.
      *
-     * @return bool
+     * @return null|string
      */
-    abstract public function uninstall(): bool;
+    abstract public function uninstall(): ?string;
 }
